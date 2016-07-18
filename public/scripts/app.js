@@ -4,6 +4,18 @@
  * into functions and objects as needed.
  *
  */
+function renderAlbum(){
+  var templateHtml = $("#album-template").html();
+  console.log(templateHtml);
+  var albumTemplate = Handlebars.compile(templateHtml);
+
+  var partialAlbumHtml = albumTemplate(album);
+
+
+}
+
+
+
 
 
 /* hard-coded data! */
@@ -39,6 +51,9 @@ sampleAlbums.push({
 
 $(document).ready(function() {
   console.log('app.js loaded!');
+
+
+
 });
 
 
@@ -47,6 +62,6 @@ $(document).ready(function() {
 
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
-  console.log('rendering album:', album);
+  
 
 }
