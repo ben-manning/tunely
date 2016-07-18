@@ -34,6 +34,9 @@ app.get('/', function homepage (req, res) {
 
 app.get('/api', controllers.api.index);
 
+//get albums from albums api
+app.get('/api/albums', controllers.albums.index);
+
 /**********
  * SERVER *
  **********/
