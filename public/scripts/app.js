@@ -4,19 +4,6 @@
  * into functions and objects as needed.
  *
  */
-function renderAlbum(){
-  var templateHtml = $("#album-template").html();
-  console.log(templateHtml);
-  var albumTemplate = Handlebars.compile(templateHtml);
-
-  var partialAlbumHtml = albumTemplate(album);
-
-
-}
-
-
-
-
 
 /* hard-coded data! */
 var sampleAlbums = [];
@@ -51,17 +38,14 @@ sampleAlbums.push({
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-
-
-
+  renderAlbum(sampleAlbums[0]);
 });
-
-
-
 
 
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
-  
-
+  var albumHtml   = $("#album-template").html();
+  var templateFunction = Handlebars.compile(albumHtml);
+  var html = templateFunction(album);
+  $("#albums").prepend(html);
 }
